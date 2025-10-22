@@ -19,7 +19,7 @@
       docker images -q | xargs -r docker rmi -f
       docker system prune -f  
       docker compose ps -q | grep . >/dev/null && docker compose down || echo "no runing docker comopose container"
-      docker compose up --build . 
+      docker compose up --build 
     '';
   };
 }
