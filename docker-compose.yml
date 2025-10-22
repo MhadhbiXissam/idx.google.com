@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  dev:
+    build: .
+    container_name: dev
+    environment:
+      VSCODE_SETTINGS: '{"workbench.colorTheme": "Monokai Pro", "workbench.iconTheme": "Monokai Pro Icons", "window.customTitleBarVisibility": "auto", "workbench.sideBar.location": "left", "files.autoSave": "afterDelay", "window.commandCenter": false, "workbench.layoutControl.enabled": false, "workbench.activityBar.location": "top", "workbench.panel.alignment": "justify", "python.defaultInterpreterPath": "/opt/base/bin/python", "jupyter.jupyterServerType": "local", "python.terminal.activateEnvInCurrentTerminal": true}'
+      GIT_USER: ${GIT_USER}
+      GIT_EMAIL: ${GIT_EMAIL}
+      GITLAB_TOKEN: ${GITLAB_TOKEN}
+      GITHUB_TOKEN: ${GITHUB_TOKEN}
+      VNC_USER: ${VNC_USER}
+      VNC_PW: ${VNC_PW}
+    ports:
+      - "8000:8000"
+      - "6080:6080"
+    volumes:
+      - ./workspace:/root/workspace
+    tty: true
+    stdin_open: true
