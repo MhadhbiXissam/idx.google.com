@@ -9,7 +9,7 @@
   ];
 
   env = {
-    GIT_USER = "mhadhbixissam";
+
 
   };
 
