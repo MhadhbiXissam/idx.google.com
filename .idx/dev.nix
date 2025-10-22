@@ -17,7 +17,7 @@
     docker-setup = ''
       docker images -q | xargs -r docker rmi -f
       docker system prune -f  
-      docker compose up 
+      docker compose up --build
 
 
     '';
